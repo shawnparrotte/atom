@@ -1,0 +1,81 @@
+html {
+  background-color: #18263d;
+  overflow: hidden;
+}
+
+#core {
+    position: absolute;
+    top: 50%; left: 50%;
+    height: 5em;
+    width: 5em;
+    margin-left: -2.5em;
+    margin-top: -2em;
+    background-color: steelblue;
+    border-radius: 50%;
+}
+
+#core:before {
+    position: absolute;
+    background-color: #18263d;
+    height: 6em;
+    width: 6em;
+    top: -1em;
+    left: -1em;
+    border-radius: 50%;
+    border: 8px solid #fd336e;
+    z-index: -1000;
+    content: "";
+}
+
+#atom-unit-1, #atom-unit-2, #atom-unit-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+#atom-unit-1 { transform: rotateZ(0deg); }
+#atom-unit-2 { transform: rotateZ(120deg) translateX(10px); margin-top: -101vh; }
+#atom-unit-3 { transform: rotateZ(240deg); margin-top: -100vh; }
+
+#atom-container-1, #atom-container-2, #atom-container-3 {
+  position: absolute;
+  top: 50%; left: 50%;
+  margin: -10em;
+  border: solid steelblue 8px;
+  border-radius: 50%;
+  width: 20em; height: 20em;
+  transform: skewX(50deg);
+}
+
+#atom-1, #atom-2, #atom-3 {
+  position: absolute;
+  top: 50%; left: 50%;
+  margin: -2em;
+  width: 3em; height: 3em;
+  border-radius: 50%;
+  border: 8px solid #fd336e;
+  background-color: #18263d;
+  animation: ellipse 3s linear infinite;
+}
+
+.atom-insides {
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    background-color: #6c0c39;
+    top: .5em;
+    left: .5em;
+}
+
+@keyframes ellipse {
+  from {
+    transform: skewX(50deg) rotate(0deg) translateY(-10em)
+               rotate(0deg) skewX(-50deg) rotate(0deg);
+  }
+  to {
+    transform: skewX(50deg) rotate(360deg) translateY(-10em)
+               rotate(-360deg) skewX(-50deg) rotate(360deg);
+  }
+}
